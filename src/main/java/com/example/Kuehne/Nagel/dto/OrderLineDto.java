@@ -11,4 +11,6 @@ public class OrderLineDto {
     private Integer productSkuCode;
 
     private String order;
+
+    private ProductDto product;
 }
