@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Registered
 public interface OrderRepository  extends JpaRepository<Order, Long> {
+    Order findByOrderNumber(String orderNumber);
 }
