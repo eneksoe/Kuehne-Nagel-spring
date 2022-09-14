@@ -27,10 +27,11 @@ public class Product {
     private String name;
 
     @NotNull
+    @Column(name = "sku_code")
     private Integer skuCode;
 
-    @NotNull
     @Min(value = 0)
+    @Column(name = "unit_price")
     private Integer unitPrice;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "product")

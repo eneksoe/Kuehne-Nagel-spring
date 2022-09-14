@@ -1,4 +1,4 @@
-package com.example.Kuehne.Nagel.controller.CustomerController;
+package com.example.Kuehne.Nagel.controller;
 
 import com.example.Kuehne.Nagel.dto.CustomerDto;
 import com.example.Kuehne.Nagel.service.CustomerService;

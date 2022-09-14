@@ -5,6 +5,7 @@ import com.example.Kuehne.Nagel.mapper.Mapper;
 import com.example.Kuehne.Nagel.models.Product;
 import com.example.Kuehne.Nagel.repository.ProductRepository;
 import com.example.Kuehne.Nagel.service.ProductService;
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public ProductDto update(ProductDto product) {
         final Integer skuCode = product.getSkuCode();
         Product productFromDb = repository.findBySkuCode(skuCode);
@@ -42,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
             log.warn(message);
             throw new RuntimeException(message);
         }
-        productFromDb.setUnitPrice(product.getUniPrice());
+        productFromDb.setUnitPrice(product.getUnitPrice());
 
         return mapper.toDto(productFromDb);
     }

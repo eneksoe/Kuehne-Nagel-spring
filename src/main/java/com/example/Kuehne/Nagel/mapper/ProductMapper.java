@@ -15,7 +15,7 @@ public class ProductMapper implements Mapper<ProductDto, Product>{
         return ProductDto.builder()
                 .name(entity.getName())
                 .skuCode(entity.getSkuCode())
-                .uniPrice(entity.getUnitPrice())
+                .unitPrice(entity.getUnitPrice())
                 .build();
     }
 
@@ -28,7 +28,7 @@ public class ProductMapper implements Mapper<ProductDto, Product>{
         return Product.builder()
                 .name(dto.getName())
                 .skuCode(dto.getSkuCode())
-                .unitPrice(dto.getUniPrice())
+                .unitPrice(dto.getUnitPrice())
                 .build();
     }
 }

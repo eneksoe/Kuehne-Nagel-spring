@@ -10,5 +10,5 @@ public class ProductDto {
 
     private Integer skuCode;
 
-    private Integer uniPrice;
+    private Integer unitPrice;
 }
