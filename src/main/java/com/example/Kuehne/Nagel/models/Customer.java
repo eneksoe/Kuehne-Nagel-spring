@@ -1,10 +1,7 @@
 package com.example.Kuehne.Nagel.models;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -12,12 +9,14 @@ import javax.validation.constraints.Size;
 import java.math.BigInteger;
 import java.util.List;
 
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Builder
 
 @Entity
+@Table(name = "customer")
 public class Customer {
 
     @Id

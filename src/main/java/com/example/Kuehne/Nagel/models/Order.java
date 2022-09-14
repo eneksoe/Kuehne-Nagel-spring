@@ -8,8 +8,10 @@ import java.time.ZonedDateTime;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
+@Table(name = "customer_order")
 
 @Entity
 public class Order {

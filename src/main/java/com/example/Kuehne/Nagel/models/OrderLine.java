@@ -1,15 +1,13 @@
 package com.example.Kuehne.Nagel.models;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 
 @Entity
 @Table(name = "order_line")
@@ -26,7 +24,7 @@ public class OrderLine {
     private Integer quantity;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "customer_order_id")
     private Order order;
 
 

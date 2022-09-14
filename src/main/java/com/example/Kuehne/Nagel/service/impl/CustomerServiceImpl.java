@@ -5,6 +5,8 @@ import com.example.Kuehne.Nagel.mapper.Mapper;
 import com.example.Kuehne.Nagel.models.Customer;
 import com.example.Kuehne.Nagel.repository.CustomerRepository;
 import com.example.Kuehne.Nagel.service.CustomerService;
+
+import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    @Transactional
     public CustomerDto update(CustomerDto customer) {
         final String email = customer.getEmail();
         if(email == null || email.isEmpty()){
