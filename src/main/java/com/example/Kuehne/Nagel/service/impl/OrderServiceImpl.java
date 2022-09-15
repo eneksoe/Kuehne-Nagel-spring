@@ -31,4 +31,11 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderDto> getAll() {
         return mapper.toDtos(repository.findAll());
     }
+
+    @Override
+    public List<OrderDto> getAllByDate(ZonedDateTime date) {
+        return mapper.toDtos(repository.findBySubmissionDate(date));
+    }
+
+
 }
